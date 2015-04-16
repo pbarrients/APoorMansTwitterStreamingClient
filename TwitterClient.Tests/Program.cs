@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TwitterClient.Infrastructure.Models;
 using TwitterClient.Infrastructure.Utility;
 
 namespace TwitterClient.Tests
@@ -16,9 +17,15 @@ namespace TwitterClient.Tests
             string customerKey = "kO6JlIwLa4czaQSqvHXLFfOhb";
             string customerSecret = "rSbhwvMR0vq1UCpkztfl3PvazveNHCKg6879J8yd0kLu7Q0xSF";
 
-            using (var stream = new TwitterStream(customerKey,customerSecret,accessToken,accessTokenSecret))
+            using (var stream = new TwitterStreamClient(customerKey, customerSecret, accessToken, accessTokenSecret))
             {
-                stream.StartStream();
+                stream.Start();
+                stream.TweetReceivedEvent += (sender, tweetargs) =>
+                {
+                    Tweet t = tweetargs.Tweet;
+
+                    Console.WriteLine(t.Text);
+                };
             }
 
         }

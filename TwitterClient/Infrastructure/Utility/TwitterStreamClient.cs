@@ -4,26 +4,40 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using Newtonsoft.Json;
+using TwitterClient.Infrastructure.Events;
+using TwitterClient.Infrastructure.Events.EventArguments;
 using TwitterClient.Infrastructure.Models;
 using TwitterClient.Infrastructure.OAuth;
 
 namespace TwitterClient.Infrastructure.Utility
 {
-    public class TwitterStreamClient : OAuthBase
+    public class TwitterStreamClient : OAuthBase, IDisposable
     {
-        private readonly string access_token = "874229294-vTpHJDcl8K0I7Ae6H29Ezvpw5ZVsX3uT2wbtDNkD";
-        private readonly string access_token_secret = "3XNHrHBanj3x2fOTCm53t7L6hd7NSDlLqWIgc24um3x83";
-        private readonly string customer_key = "kO6JlIwLa4czaQSqvHXLFfOhb";
-        private readonly string customer_secret = "rSbhwvMR0vq1UCpkztfl3PvazveNHCKg6879J8yd0kLu7Q0xSF";
+        private string _consumerKey;
+        private string _consumerSecret;
+        private string _accessToken;
+        private string _accessSecret;
 
-        public void Setup()
+        private HttpWebRequest webRequest = null;
+        private HttpWebResponse webResponse = null;
+        private StreamReader responseStream = null;
+
+        public event TweetReceivedHandler TweetReceivedEvent;
+        public delegate void TweetReceivedHandler(TwitterStreamClient s, TweetEventArgs e);
+
+        public TwitterStreamClient(string consumerKey, string consumerSecret, string accessToken, string accessSecret)
+        {
+            _consumerKey = consumerKey;
+            _consumerSecret = consumerSecret;
+            _accessToken = accessToken;
+            _accessSecret = accessSecret;
+        }
+        public void Start()
         {
             //Twitter Streaming API
             string stream_url = "https://stream.twitter.com/1.1/statuses/filter.json";
 
-            HttpWebRequest webRequest = null;
-            HttpWebResponse webResponse = null;
-            StreamReader responseStream = null;
+            
 
             string trackKeywords = "twitter";
             string followUserId = "";
@@ -79,8 +93,10 @@ namespace TwitterClient.Infrastructure.Utility
                             wait = 250;
 
                             var t = JsonConvert.DeserializeObject<Tweet>(jsonText, new JsonSerializerSettings());
+
+                            this.Raise(TweetReceivedEvent, new TweetReceivedEventArgs(t));
                             //Write Status
-                            Console.Write(t);
+                            //Console.Write(t);
                         }
                         //Abort is needed or responseStream.Close() will hang.
                         webRequest.Abort();
@@ -154,6 +170,20 @@ namespace TwitterClient.Infrastructure.Utility
         }
 
 
+
+
+        public void Raise(TweetReceivedHandler handler, TweetEventArgs e)
+        {
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+        protected void RaiseMatchingTweetReceived(TweetReceivedEventArgs eventArgs)
+        {
+            Raise(TweetReceivedEvent,eventArgs);
+        }
+
         private string GetAuthHeader(string url)
         {
             string normalizedString;
@@ -162,7 +192,7 @@ namespace TwitterClient.Infrastructure.Utility
             string nonce = GenerateNonce();
 
 
-            string oauthSignature = GenerateSignature(new Uri(url), customer_key, customer_secret, access_token, access_token_secret, "POST", timeStamp, nonce, out normalizeUrl, out normalizedString);
+            string oauthSignature = GenerateSignature(new Uri(url), _consumerKey, _consumerSecret, _accessToken, _accessSecret, "POST", timeStamp, nonce, out normalizeUrl, out normalizedString);
 
 
             // create the request header
@@ -175,10 +205,26 @@ namespace TwitterClient.Infrastructure.Utility
                 Uri.EscapeDataString(nonce),
                 Uri.EscapeDataString(Hmacsha1SignatureType),
                 Uri.EscapeDataString(timeStamp),
-                Uri.EscapeDataString(customer_key),
-                Uri.EscapeDataString(access_token),
+                Uri.EscapeDataString(_consumerKey),
+                Uri.EscapeDataString(_accessToken),
                 Uri.EscapeDataString(oauthSignature),
                 Uri.EscapeDataString(OAuthVersion));
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                webRequest.Abort();
+                responseStream.Close();
+                responseStream = null;
+                webResponse.Close();
+                webResponse = null;
+            }
         }
     }
 }

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Infrastructure\Enum\StreamState.cs" />
     <Compile Include="Infrastructure\Events\EventArguments\TweetEventArgs.cs" />
+    <Compile Include="Infrastructure\Events\EventHelpers.cs" />
     <Compile Include="Infrastructure\Helpers\Credentials.cs" />
     <Compile Include="Infrastructure\Helpers\ListExtensions.cs" />
     <Compile Include="Infrastructure\Helpers\Params.cs" />
@@ -58,7 +59,6 @@
     <Compile Include="Infrastructure\Models\Tweet.cs" />
     <Compile Include="Infrastructure\Models\User.cs" />
     <Compile Include="Infrastructure\OAuth\OAuthBase.cs" />
-    <Compile Include="Infrastructure\Utility\TwitterStream.cs" />
     <Compile Include="Infrastructure\Utility\TwitterStreamClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
