@@ -6,3 +6,11 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\TwitterClient\TwitterClient\obj\Debug\TwitterClient.pdb
 \\psf\home\Documents\Visual Studio 2013\Projects\TwitterClient\TwitterClient\bin\Debug\Newtonsoft.Json.dll
 \\psf\home\Documents\Visual Studio 2013\Projects\TwitterClient\TwitterClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\TwitterClient.dll.config
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\TwitterClient.dll
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\TwitterClient.pdb
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.csprojResolveAssemblyReference.cache
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.dll
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.pdb

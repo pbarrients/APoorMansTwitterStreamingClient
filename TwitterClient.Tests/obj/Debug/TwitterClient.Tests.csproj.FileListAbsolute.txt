@@ -8,3 +8,13 @@
 \\psf\home\Documents\Visual Studio 2013\Projects\TwitterClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.pdb
 \\psf\home\Documents\Visual Studio 2013\Projects\TwitterClient\TwitterClient.Tests\bin\Debug\Newtonsoft.Json.dll
 \\psf\home\Documents\Visual Studio 2013\Projects\TwitterClient\TwitterClient.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.Tests.exe.config
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.exe
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.Tests.exe
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.Tests.pdb
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.dll
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.pdb
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.pdb
