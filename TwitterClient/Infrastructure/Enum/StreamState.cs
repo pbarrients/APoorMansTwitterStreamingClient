@@ -11,8 +11,7 @@ namespace TwitterClient.Infrastructure.Enum
     /// </summary>
     public enum StreamState
     {
-        Stop = 0,
-        Resume = 1,
-        Pause = 2
+        Stopped = 0,
+        Running = 1
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -103,6 +104,8 @@ namespace TwitterClient.Infrastructure.Utility
 
                 _webRequest.BeginGetResponse(ar =>
                 {
+                    StreamState = StreamState.Running;
+                    
                     var req = (WebRequest) ar.AsyncState;
 
                     using (var response = req.EndGetResponse(ar))
@@ -130,6 +133,8 @@ namespace TwitterClient.Infrastructure.Utility
             }
             catch (WebException webEx)
             {
+                StreamState = StreamState.Stopped;
+
                 var wRespStatusCode = ((HttpWebResponse) webEx.Response).StatusCode;
                 Raise(ExceptionReceived,
                     new TwitterExceptionEventArgs(new TwitterException(wRespStatusCode, webEx.Message)));
@@ -162,7 +167,7 @@ namespace TwitterClient.Infrastructure.Utility
             {
                 // general catch block
 
-                Console.WriteLine(ex.ToString());
+                Debug.WriteLine(ex.ToString());
             }
             finally
             {
