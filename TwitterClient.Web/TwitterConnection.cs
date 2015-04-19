@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using Microsoft.AspNet.SignalR;
 using TwitterClient.Infrastructure.Config;
@@ -41,6 +42,7 @@ namespace TwitterClient.Web
                 _context.Clients.All.broadcast(args.Tweet);
             };
             stream.Start();
+           
         }
     }
 }

@@ -1,6 +1,13 @@
-﻿body {
+﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,greek,latin-ext,greek-ext,cyrillic-ext,cyrillic);
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    -webkit-font-smoothing: subpixel-antialiased;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +28,13 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+ul.tweets {
+    width: 100%;    
+}
+
+ul.tweets li {
+    border: 1px solid gainsboro;
+    padding: 8px; 
 }

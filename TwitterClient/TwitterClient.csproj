@@ -58,7 +58,6 @@
     <Compile Include="Infrastructure\Models\Tweet.cs" />
     <Compile Include="Infrastructure\Models\User.cs" />
     <Compile Include="Infrastructure\OAuth\OAuthBase.cs" />
-    <Compile Include="Infrastructure\Utility\Stream.cs" />
     <Compile Include="Infrastructure\Utility\TwitterStreamClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

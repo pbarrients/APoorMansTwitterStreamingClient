@@ -111,10 +111,17 @@ namespace TwitterClient.Infrastructure.Utility
                         {
                             while (!reader.EndOfStream)
                             {
-                                var jsonObj = JsonConvert.DeserializeObject<Tweet>(reader.ReadLine(),
+                                try
+                                {
+                                    var jsonObj = JsonConvert.DeserializeObject<Tweet>(reader.ReadLine(),
                                     new JsonSerializerSettings());
 
-                                Raise(TweetReceivedEvent, new TweetEventArgs(jsonObj));
+                                    Raise(TweetReceivedEvent, new TweetEventArgs(jsonObj));
+                                }
+                                catch (JsonReaderException jsonEx)
+                                {
+                                    
+                                }       
                             }
                         }
                     }
