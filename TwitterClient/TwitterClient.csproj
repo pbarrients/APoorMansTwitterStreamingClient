@@ -49,10 +49,7 @@
     <Compile Include="Infrastructure\Enum\StreamState.cs" />
     <Compile Include="Infrastructure\Events\EventArguments\TweetEventArgs.cs" />
     <Compile Include="Infrastructure\Events\EventArguments\TwitterExceptionEventArgs.cs" />
-    <Compile Include="Infrastructure\Models\Coordinates.cs" />
-    <Compile Include="Infrastructure\Models\Geo.cs" />
-    <Compile Include="Infrastructure\Models\Tweet.cs" />
-    <Compile Include="Infrastructure\Models\User.cs" />
+    <Compile Include="Infrastructure\Models\TweetModel.cs" />
     <Compile Include="Infrastructure\OAuth\OAuthBase.cs" />
     <Compile Include="Infrastructure\Utility\TwitterStreamClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

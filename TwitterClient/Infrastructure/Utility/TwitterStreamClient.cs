@@ -32,9 +32,9 @@ namespace TwitterClient.Infrastructure.Utility
         private HttpWebResponse _webResponse;
         private StreamReader _responseStream;
 
-        public event TweetReceivedHandler TweetReceivedEvent;
-
         public StreamState StreamState;
+
+        public event TweetReceivedHandler TweetReceivedEvent;
 
         public delegate void TweetReceivedHandler(TwitterStreamClient s, TweetEventArgs e);
 
@@ -116,14 +116,24 @@ namespace TwitterClient.Infrastructure.Utility
                             {
                                 try
                                 {
-                                    var jsonObj = JsonConvert.DeserializeObject<Tweet>(reader.ReadLine(),
-                                    new JsonSerializerSettings());
+                                    string json = reader.ReadLine();
+                                    var jsonObj = JsonConvert.DeserializeObject<Tweet>(json,
+                                        new JsonSerializerSettings()
+                                        {
+                                            NullValueHandling = NullValueHandling.Ignore,
+                                            StringEscapeHandling = StringEscapeHandling.EscapeHtml,
+                                            DateFormatHandling = DateFormatHandling.MicrosoftDateFormat
+                                        });
 
                                     Raise(TweetReceivedEvent, new TweetEventArgs(jsonObj));
                                 }
+                                catch (JsonSerializationException jsonSEx)
+                                {
+                                    Debug.WriteLine(jsonSEx.ToString());
+                                }
                                 catch (JsonReaderException jsonEx)
                                 {
-                                    
+                                    Debug.WriteLine(jsonEx.ToString());
                                 }       
                             }
                         }

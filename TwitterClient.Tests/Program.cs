@@ -24,12 +24,9 @@ namespace TwitterClient.Tests
             var stream = new TwitterStreamClient(config);
 
             // subscribe to the event handler
-            stream.TweetReceivedEvent += (sender, tweet) =>
+            stream.TweetReceivedEvent += (sender, arguments) =>
             {
-                if (tweet.Tweet.Id != 0)
-                {
-                    Console.WriteLine(tweet.Tweet.Id);
-                }
+                Console.WriteLine(arguments.Tweet.coordinates);
             };
 
             stream.ExceptionReceived += (sender, exception) => Console.WriteLine(exception.TwitterException.ResponseMessage);

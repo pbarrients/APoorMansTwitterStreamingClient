@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading;
-using System.Web;
 using Microsoft.AspNet.SignalR;
 using TwitterClient.Infrastructure.Config;
 using TwitterClient.Infrastructure.Utility;
@@ -15,13 +10,13 @@ namespace TwitterClient.Web
     public class TwitterConnection
     {
         // Consumer Keys + Secrets
-        private string _consumerKey = ConfigurationManager.AppSettings.Get("consumerKey");
-        private string _consumerSecret = ConfigurationManager.AppSettings.Get("consumerSecret");
+        private readonly string _consumerKey = ConfigurationManager.AppSettings.Get("consumerKey");
+        private readonly string _consumerSecret = ConfigurationManager.AppSettings.Get("consumerSecret");
         // Twitter OAuth Credentials
-        private string _accessKey = ConfigurationManager.AppSettings.Get("accessToken");
-        private string _accessToken = ConfigurationManager.AppSettings.Get("accessTokenSecret");
+        private readonly string _accessKey = ConfigurationManager.AppSettings.Get("accessToken");
+        private readonly string _accessToken = ConfigurationManager.AppSettings.Get("accessTokenSecret");
 
-        private IHubContext _context;
+        private readonly IHubContext _context;
 
         public TwitterConnection()
         {
@@ -41,8 +36,7 @@ namespace TwitterClient.Web
                 Debug.WriteLine(args.Tweet.ToString());
                 _context.Clients.All.broadcast(args.Tweet);
             };
-            stream.Start();
-           
+            stream.Start();     
         }
     }
 }
