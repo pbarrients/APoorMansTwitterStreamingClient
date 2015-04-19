@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TwitterClient.Infrastructure.Models;
+using TwitterClient.Infrastructure.Config;
 using TwitterClient.Infrastructure.Utility;
 
 namespace TwitterClient.Tests
@@ -17,16 +13,28 @@ namespace TwitterClient.Tests
             string customerKey = "kO6JlIwLa4czaQSqvHXLFfOhb";
             string customerSecret = "rSbhwvMR0vq1UCpkztfl3PvazveNHCKg6879J8yd0kLu7Q0xSF";
 
-            using (var stream = new TwitterStreamClient(customerKey, customerSecret, accessToken, accessTokenSecret))
+            var config = new StreamConfig()
             {
-                stream.Start();
-                stream.TweetReceivedEvent += (sender, tweetargs) =>
-                {
-                    Tweet t = tweetargs.Tweet;
+                ConsumerKey = customerKey,
+                ConsumerSecret = customerSecret,
+                AccessToken = accessToken,
+                AccessSecret = accessTokenSecret,
+                GeoOnly = true
+            };
+            var stream = new TwitterStreamClient(config);
 
-                    Console.WriteLine(t.Text);
-                };
-            }
+            // subscribe to the event handler
+            stream.TweetReceivedEvent += (sender, tweet) =>
+            {
+                if (tweet.Tweet.Id != 0)
+                {
+                    Console.WriteLine(tweet.Tweet.Id);
+                }
+            };
+
+            stream.ExceptionReceived += (sender, exception) => Console.WriteLine(exception.TwitterException.ResponseMessage);
+
+            stream.Start();
 
         }
     }

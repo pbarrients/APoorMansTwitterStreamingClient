@@ -14,3 +14,11 @@ C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\
 C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.csprojResolveAssemblyReference.cache
 C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.dll
 C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\TwitterClient.dll.config
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\TwitterClient.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\TwitterClient.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\Newtonsoft.Json.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient\bin\Debug\Newtonsoft.Json.xml
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient\obj\Debug\TwitterClient.pdb

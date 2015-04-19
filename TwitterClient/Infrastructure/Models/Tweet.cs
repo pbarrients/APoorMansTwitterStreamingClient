@@ -14,7 +14,13 @@ namespace TwitterClient.Infrastructure.Models
         [JsonProperty("text")]
         public string Text;
 
-        //[DataMember] public Geo geo;
+        [DataMember]
+        [JsonProperty("id_str")]
+        public long Id;
+
+        [DataMember]
+        [JsonProperty("screen_name")]
+        public string UserName;
 
         public override string ToString()
         {

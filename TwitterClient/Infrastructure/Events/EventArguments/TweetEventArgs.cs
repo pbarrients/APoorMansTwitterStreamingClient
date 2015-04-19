@@ -16,11 +16,4 @@ namespace TwitterClient.Infrastructure.Events.EventArguments
 
         public Tweet Tweet { get; private set; }
     }
-    public class TweetReceivedEventArgs : TweetEventArgs
-    {
-        public TweetReceivedEventArgs(Tweet tweet)
-            : base(tweet)
-        {
-        }
-    }
 }

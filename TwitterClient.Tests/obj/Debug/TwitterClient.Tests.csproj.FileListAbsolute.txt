@@ -18,3 +18,13 @@ C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\
 C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Mark\Documents\APoorMansTwitterStreamingClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.Tests.exe.config
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.exe
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.Tests.exe
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.Tests.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\Newtonsoft.Json.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\TwitterClient.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\bin\Debug\Newtonsoft.Json.xml
+\\psf\Home\Documents\Visual Studio 2013\Projects\APoorMansTwitterStreamingClient\TwitterClient.Tests\obj\Debug\TwitterClient.Tests.csprojResolveAssemblyReference.cache

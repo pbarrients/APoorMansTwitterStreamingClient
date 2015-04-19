@@ -45,20 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Config\StreamConfig.cs" />
     <Compile Include="Infrastructure\Enum\StreamState.cs" />
     <Compile Include="Infrastructure\Events\EventArguments\TweetEventArgs.cs" />
+    <Compile Include="Infrastructure\Events\EventArguments\TwitterExceptionEventArgs.cs" />
     <Compile Include="Infrastructure\Events\EventHelpers.cs" />
-    <Compile Include="Infrastructure\Helpers\Credentials.cs" />
     <Compile Include="Infrastructure\Helpers\ListExtensions.cs" />
     <Compile Include="Infrastructure\Helpers\Params.cs" />
-    <Compile Include="Infrastructure\Helpers\WebRequest.cs" />
     <Compile Include="Infrastructure\Interfaces\IStream.cs" />
-    <Compile Include="Infrastructure\Invokers\Sync\SynchronousInvoker.cs" />
     <Compile Include="Infrastructure\Models\Coordinates.cs" />
     <Compile Include="Infrastructure\Models\Geo.cs" />
     <Compile Include="Infrastructure\Models\Tweet.cs" />
     <Compile Include="Infrastructure\Models\User.cs" />
     <Compile Include="Infrastructure\OAuth\OAuthBase.cs" />
+    <Compile Include="Infrastructure\Utility\Stream.cs" />
     <Compile Include="Infrastructure\Utility\TwitterStreamClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,10 +66,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\Exceptions\" />
-    <Folder Include="Infrastructure\Invokers\Async\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
