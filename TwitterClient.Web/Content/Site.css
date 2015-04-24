@@ -30,6 +30,9 @@ textarea {
     max-width: 280px;
 }
 
+html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+
+
 ul.tweets {
     width: 100%;    
 }
@@ -37,4 +40,8 @@ ul.tweets {
 ul.tweets li {
     border: 1px solid gainsboro;
     padding: 8px; 
+}
+
+div.hidden-fields {
+    display: none;
 }
