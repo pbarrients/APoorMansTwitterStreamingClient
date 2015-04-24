@@ -25,8 +25,18 @@ $(function () {
             var marker = new google.maps.Marker({
                 position: { lat: c[1], lng: c[0] },
                 map: map,
-                title: "Hello World!"
+                title: tweet.text
             });
+
+            var html = tweet.text;
+
+            var infowindow = new google.maps.InfoWindow({
+                content: html
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+
         }
         
     };
