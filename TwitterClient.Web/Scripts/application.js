@@ -1,11 +1,17 @@
 ﻿var map;
+function fitToUKBounds(map) {
+    var topLeft = new google.maps.LatLng(49.955269, -8.164723);
+    var bottomRight = new google.maps.LatLng(60.6311, 1.7425);
+    var bounds = new google.maps.LatLngBounds(topLeft, bottomRight);
+    map.fitBounds(bounds);
+}
 function initialize() {
     var mapOptions = {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8
+        zoom: 5
     };
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
+    fitToUKBounds(map);
 }
 // document ready shorthand
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -17,13 +23,13 @@ $(function () {
     // this is the function that the server will call to broadcast new tweets
     theHub.client.broadcast = function (tweet) {
 
-        var c = tweet.coordinates.coordinates;
+        var c = tweet.coordinates;
 
-        if (!$.isEmptyObject(tweet.coordinates)) {
-            //console.log(c);
+        if (!$.isEmptyObject(c)) {
+            console.log(c);
             // To add the marker to the map, use the 'map' property
             var marker = new google.maps.Marker({
-                position: { lat: c[1], lng: c[0] },
+                position: { lat: c.coordinates[1], lng: c.coordinates[0] },
                 map: map,
                 title: tweet.text
             });
