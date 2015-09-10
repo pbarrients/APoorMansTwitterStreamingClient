@@ -31,6 +31,7 @@ $(function () {
             var marker = new google.maps.Marker({
                 position: { lat: c.coordinates[1], lng: c.coordinates[0] },
                 map: map,
+                animation: google.maps.Animation.DROP,
                 title: tweet.text
             });
 
