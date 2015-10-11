@@ -2,6 +2,9 @@
 *.DS_Store
 [Tt]humbs.db
 
+#keys
+*.config
+
 #Visual Studio Files
 [Oo]bj
 [Bb]in
